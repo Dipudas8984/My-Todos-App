@@ -6,10 +6,16 @@ body{
     text-align: center;
 }
 
+.heading{
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 45px;
+    color: rgba(0, 0, 0, 0.664);
+}
 
 .main-container {
     margin: auto;
-    margin-top: 50px;
     width: 500px;
     border: 3px solid rgb(159, 217, 228);
     background-color: rgb(159, 217, 228);
@@ -93,6 +99,11 @@ h5{
     color: rgba(0, 0, 0, 0.685)
 }
 
+
+.mark {
+    color: rgba(0, 0, 0, 0.507);
+    
+}
 
 @media screen and (max-width: 600px) {
     .main-container{

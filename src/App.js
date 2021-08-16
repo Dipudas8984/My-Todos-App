@@ -7,6 +7,7 @@ const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
 function App() {
   const [todos, setTodos] = useState([])
+  const [markTitle, setMarkTitle] = useState('mark all')
   const todoNameRef = useRef()
   
   function getTime(){
@@ -47,15 +48,22 @@ function App() {
     setTodos(newTodos)
   }
 
-  function handelMarkAll(){
-    const newTodos = todos.map(todo => todo.complete = true)
-    // setTodos(newTodos)
-    console.log(newTodos);
-    // setTodos(newTodos)
+  function handelToggleMarkAll(){
+    const newTodos = todos.map(todo => {
+      todo.complete = !todo.complete
+      return todo
+    })
+    setTodos(newTodos)
+    markTitle === 'mark all' ? setMarkTitle('unmark all') : setMarkTitle('mark all')
   }
 
   return (
+    <div>
+    <div className="heading">
+      MY TODOS
+    </div>
     <div className='main-container'>
+    <span onClick={handelToggleMarkAll} className='mark'>{markTitle}</span>
     <div className="todo-container">
       {todos.length === 0 ? <h5>**No Available Todos**</h5>: <TodoList todos={todos} toggleTodo={toggleTodo}/>}
     </div>
@@ -68,7 +76,7 @@ function App() {
         <span>{todos.length !== 0 ? todos.length + ' todos in total' : '0 todos in total'} </span>
         <span>{todos.filter(todo => !todo.complete).length} left to do</span>
       </div>
-      <button onClick={handelMarkAll}>mark all</button>
+    </div>
     </div>
     
   )
