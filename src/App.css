@@ -99,7 +99,8 @@ h5{
     display: block;
     margin-left: 80%;
     font-size: xx-small; 
-    color: rgba(0, 0, 0, 0.685)
+    color: rgba(0, 0, 0, 0.685);
+    margin-top: 3px;
 }
 
 
@@ -120,8 +121,8 @@ h5{
         width: 80%;
     }
     .todo-text{
-        font-size: 14px;
-        color: rgba(0, 0, 0, 0.829);
+        font-size: 13px;
+        color: rgba(0, 0, 0, 0.76);
     }
     .mark {
         font-size: 12px;
