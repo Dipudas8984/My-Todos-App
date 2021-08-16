@@ -63,13 +63,14 @@ function App() {
       MY TODOS
     </div>
     <div className='main-container'>
-    <span onClick={handelToggleMarkAll} className='mark'>{markTitle}</span>
+      {todos.length !== 0 ? <span onClick={handelToggleMarkAll} className='mark'>{markTitle}</span> : ''}
+    
     <div className="todo-container">
       {todos.length === 0 ? <h5>**No Available Todos**</h5>: <TodoList todos={todos} toggleTodo={toggleTodo}/>}
     </div>
     <div className="btn-container">
         <input ref={todoNameRef} type="text" className="input" placeholder="Add Your Todos Here "/>
-        <button onClick={handleAddTodo}>Add Todo</button>
+        <button onClick={handleAddTodo} id="add">Add Todo</button>
         <button onClick={handleClearTodos}>Clear Completed</button>
       </div>
       <div className="text">
