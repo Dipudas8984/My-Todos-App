@@ -48,9 +48,7 @@ function App() {
   }
 
   function handelMarkAll(){
-    const newTodos = todos.map(todo => {
-      todo.complete = true
-    })
+    const newTodos = todos.map(todo => todo.complete = true)
     // setTodos(newTodos)
     console.log(newTodos);
     // setTodos(newTodos)
@@ -70,6 +68,7 @@ function App() {
         <span>{todos.length !== 0 ? todos.length + ' todos in total' : '0 todos in total'} </span>
         <span>{todos.filter(todo => !todo.complete).length} left to do</span>
       </div>
+      <button onClick={handelMarkAll}>mark all</button>
     </div>
     
   )
