@@ -89,14 +89,18 @@ h5{
 .time{
     display: block;
     width: 100%;
-    margin-left: 60%;
-    font-size: smaller;
-    color: rgba(0, 0, 0, 0.808)
+    margin-left: 80%;
+    font-size: xx-small; 
+    color: rgba(0, 0, 0, 0.685)
 }
 
 
 @media screen and (max-width: 600px) {
     .main-container{
         width: 75%;
+    }
+    .time {
+        margin-left: 75%;
+
     }
   }

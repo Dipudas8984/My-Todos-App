@@ -47,6 +47,15 @@ function App() {
     setTodos(newTodos)
   }
 
+  function handelMarkAll(){
+    const newTodos = todos.map(todo => {
+      todo.complete = true
+    })
+    // setTodos(newTodos)
+    console.log(newTodos);
+    // setTodos(newTodos)
+  }
+
   return (
     <div className='main-container'>
     <div className="todo-container">
@@ -62,6 +71,7 @@ function App() {
         <span>{todos.filter(todo => !todo.complete).length} left to do</span>
       </div>
     </div>
+    
   )
 }
 
