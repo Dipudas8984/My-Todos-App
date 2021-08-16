@@ -4,7 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 import './App.css'
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
-
 function App() {
   const [todos, setTodos] = useState([])
   const [markTitle, setMarkTitle] = useState('mark all')
@@ -50,7 +49,7 @@ function App() {
 
   function handelToggleMarkAll(){
     const newTodos = todos.map(todo => {
-      markTitle === 'mark all' ?  todo.complete = true : todo.complete = false
+      markTitle === 'mark all' ?  todo.complete = true : todo.complete = false;
       return todo
     })
     setTodos(newTodos)
