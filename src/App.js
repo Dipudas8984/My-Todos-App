@@ -10,8 +10,9 @@ function App() {
   const todoNameRef = useRef()
   
   function getTime(){
-    const currentDateTime= Date().toLocaleString()
-    console.log(currentDateTime);
+    const now = new Date()
+    const time = (now.getMonth() + 1) + '/' + now.getDate() + '/' + now.getFullYear() + '  ' + (now.getHours() > 12 ? now.getHours() - 12  + ':' + now.getMinutes() + ' PM' : now.getHours() + ':' + now.getMinutes() + ' AM');
+    return time
   }
 
   useEffect(() => {
@@ -32,9 +33,10 @@ function App() {
 
   function handleAddTodo(e) {
     const name = todoNameRef.current.value
+    const currentTime = getTime()
     if (name === '') return
     setTodos(prevTodos => {
-      return [...prevTodos, { id: uuidv4(), name: name, complete: false}]
+      return [...prevTodos, { id: uuidv4(), name: name, time: currentTime , complete: false}]
     })
     getTime()
     todoNameRef.current.value = null
@@ -53,7 +55,7 @@ function App() {
     <div className="btn-container">
         <input ref={todoNameRef} type="text" className="input" placeholder="Add Your Todos Here "/>
         <button onClick={handleAddTodo}>Add Todo</button>
-        <button onClick={handleClearTodos}>Clear Complete</button>
+        <button onClick={handleClearTodos}>Clear Completed</button>
       </div>
       <div className="text">
         <span>{todos.length !== 0 ? todos.length + ' todos in total' : '0 todos in total'} </span>

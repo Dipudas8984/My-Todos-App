@@ -19,12 +19,6 @@ body{
 }
 
 
-@media screen and (max-width: 600px) {
-    .main-container{
-        width: 75%;
-    }
-  }
-
 button{
     display:block;
     text-align: center;
@@ -91,3 +85,18 @@ h5{
     text-decoration: line-through;
     color: rgba(0, 0, 0, 0.657)
 }
+
+.time{
+    display: block;
+    width: 100%;
+    margin-left: 60%;
+    font-size: smaller;
+    color: rgba(0, 0, 0, 0.808)
+}
+
+
+@media screen and (max-width: 600px) {
+    .main-container{
+        width: 75%;
+    }
+  }
