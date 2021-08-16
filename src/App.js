@@ -50,7 +50,7 @@ function App() {
 
   function handelToggleMarkAll(){
     const newTodos = todos.map(todo => {
-      todo.complete = !todo.complete
+      markTitle === 'mark all' ?  todo.complete = true : todo.complete = false
       return todo
     })
     setTodos(newTodos)
