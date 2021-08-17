@@ -9,6 +9,8 @@ function App() {
   const [markTitle, setMarkTitle] = useState('mark all')
   const todoNameRef = useRef()
   
+
+
   function getTime(){
     const now = new Date()
     const time = (now.getMonth() + 1) + '/' + now.getDate() + '/' + now.getFullYear() + '  ' + (now.getHours() > 12 ? now.getHours() - 12  + ':' + now.getMinutes() + ' PM' : now.getHours() + ':' + now.getMinutes() + ' AM');
@@ -55,6 +57,7 @@ function App() {
     setTodos(newTodos)
     markTitle === 'mark all' ? setMarkTitle('unmark all') : setMarkTitle('mark all')
   }
+
 
   return (
     <div>

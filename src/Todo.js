@@ -8,7 +8,7 @@ export default function Todo({ todo, toggleTodo }) {
   return (
       <div className="todo">
         <label>
-            <input type="checkbox" checked={todo.complete} onChange={handleTodoClick} />
+            <input type="checkbox" checked={todo.complete} onChange={handleTodoClick} id="chk-box"/>
             {todo.complete ? <span className='todo-text complete'>{todo.name}</span> : <span className='todo-text'>{todo.name}</span>}
             <span className="time">{todo.time}</span>
         </label>
